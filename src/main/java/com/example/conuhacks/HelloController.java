@@ -43,7 +43,7 @@ public class HelloController {
     protected void closeButtonMainMenuAction(ActionEvent event) {
         System.out.println("clicked");
     }
-
+   
     @FXML
     protected void openPasswordTestAction() {
         System.out.println("[APP] Opening Password Testing Menu");
@@ -55,6 +55,18 @@ public class HelloController {
             FXMLLoader loader = new FXMLLoader(fxmlLocation);
             Parent root = loader.load(fxmlLocation);
             Scene scene = new Scene(root);
+            scene.setOnMousePressed(mouseEvent -> {
+                x = mouseEvent.getSceneX();
+                y = mouseEvent.getSceneY();
+            });
+
+            scene.setOnMouseDragged(mouseEvent -> {
+                stagePG.setX(mouseEvent.getScreenX() - x);
+                stagePG.setY(mouseEvent.getScreenY() - y);
+            });
+            stagePG.setTitle("Hello!");
+            stagePG.setScene(scene);
+            stagePG.show();
             scene.getStylesheets().add(getClass().getResource("PTstyle.css").toExternalForm());
             stagePG.setScene(scene);
             stagePG.show();

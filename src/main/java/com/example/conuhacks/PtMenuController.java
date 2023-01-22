@@ -24,7 +24,8 @@ import java.util.ResourceBundle;
 
 public class PtMenuController implements Initializable {
 
-
+    private double x = 0;
+    private double y = 0;
     @FXML
     private ProgressBar complexityBar;
 
@@ -72,6 +73,18 @@ public class PtMenuController implements Initializable {
             FXMLLoader loader = new FXMLLoader(fxmlLocation);
             Parent root = loader.load(fxmlLocation);
             Scene scene = new Scene(root);
+            scene.setOnMousePressed(mouseEvent -> {
+                x = mouseEvent.getSceneX();
+                y = mouseEvent.getSceneY();
+            });
+
+            scene.setOnMouseDragged(mouseEvent -> {
+                stagePG.setX(mouseEvent.getScreenX() - x);
+                stagePG.setY(mouseEvent.getScreenY() - y);
+            });
+            stagePG.setTitle("Hello!");
+            stagePG.setScene(scene);
+            stagePG.show();
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             stagePG.setScene(scene);
             stagePG.show();
