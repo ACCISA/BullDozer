@@ -32,7 +32,7 @@ def Recommended_Password_Mem(words): #does the recommended memorable password
     for i in range(len(password)): # replace spaces with a random character from the space_replacements character
         if " "==password[i]:
             Word_Counter+=1
-            password[i]= spaces_replacements[random.randint(0,(len(spaces_replacements)-1))]
+            password[i] = spaces_replacements[random.randint(0,(len(spaces_replacements)-1))]
             
 
      #change the variables to random characters, unless 4 words are used
