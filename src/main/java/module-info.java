@@ -2,6 +2,7 @@ module com.example.conuhacks {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.jfoenix;
+    requires org.json;
 
 
     opens com.example.conuhacks to javafx.fxml;

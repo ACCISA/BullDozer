@@ -71,7 +71,7 @@ public class HelloController {
 
 
     public void openRegisterMenu(ActionEvent actionEvent) {
-        Window register = new Window(300,400,"src/main/resources/com/example/conuhacks/register-menu.fxml");
+        Window register = new Window(300,400,"src/main/resources/com/example/conuhacks/Submenus/register-menu.fxml");
         openPasswordGenerator.getScene().getWindow().hide();
         register.Open();
     }
