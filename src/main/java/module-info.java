@@ -5,6 +5,8 @@ module com.example.conuhacks {
 
 
     opens com.example.conuhacks to javafx.fxml;
+    opens com.example.conuhacks.Controllers to javafx.fxml;
+    exports com.example.conuhacks.Controllers;
     exports com.example.conuhacks;
 
 }

@@ -86,7 +86,7 @@ public class PGController {
     void BackButtonPGAction(ActionEvent event) {
         System.out.println("[APP] Application went back to Main-Menu");
         anchorPanePg.getScene().getWindow().hide();
-        Window main_menu = new Window(600,313,"main-menu.fxml");
+        Window main_menu = new Window(600,313,"src/main/resources/com/example/conuhacks/main-menu.fxml");
         main_menu.Open();
     }
 

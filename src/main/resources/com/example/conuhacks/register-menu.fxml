@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.conuhacks.Controllers.Register">
+   <children>
+      <JFXDialog fx:id="dialog" prefHeight="200.0" prefWidth="100.0" style="-fx-opacity: 0.5; -fx-border-color: #0B0B45;">
+         <JFXDialogLayout>
+            <body>
+               <Label>Passwords do not match</Label>
+            </body>
+            <actions>
+               <JFXButton fx:id="continueBtn">
+                  Continue
+               </JFXButton>
+            </actions>
+         </JFXDialogLayout>
+      </JFXDialog>
+      <JFXDialog fx:id="dialogInvalidValues" prefHeight="200.0" prefWidth="100.0" style="-fx-opacity: 0.5; -fx-border-color: #0B0B45;">
+         <JFXDialogLayout>
+            <body>
+               <Label>Please provide a valid Username and Password</Label>
+            </body>
+            <actions>
+               <JFXButton fx:id="continueBtnInvalidValues">
+                  Continue
+               </JFXButton>
+            </actions>
+         </JFXDialogLayout>
+      </JFXDialog>
+
+      <AnchorPane fx:id="registerAnchorPane" prefHeight="400.0" prefWidth="300.0" styleClass="backgroundPane" stylesheets="@style.css">
+         <children>
+            <JFXButton fx:id="createAccount" layoutX="52.0" layoutY="313.0" onAction="#actionCreateAccount" prefHeight="55.0" prefWidth="196.0" style="-fx-border-color: WHITE;" text="Register" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="inputUsername" focusColor="WHITE" layoutX="52.0" layoutY="137.0" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: White;" unFocusColor="#ffffff00">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <Text fill="WHITE" layoutX="37.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Create an Account" wrappingWidth="226.1982421875">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="37.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Username" wrappingWidth="226.1982421875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="37.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Password" wrappingWidth="226.1982421875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="37.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Confirm Password" wrappingWidth="226.1982421875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <JFXPasswordField fx:id="inputPassword" layoutX="52.0" layoutY="204.0" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: WHITE;" />
+            <JFXPasswordField fx:id="inputConfirmPassword" layoutX="52.0" layoutY="271.0" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: WHITE;" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

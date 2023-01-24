@@ -88,4 +88,28 @@ public class Utils {
       return false;
    }
 
+   /**
+    * Returns true if values are the same.
+    * @param p1 First String
+    * @param p2 Second String
+    * @return Returns true if both string are equals. uses .equals
+    */
+   public static boolean hasSamePassword(String p1, String p2){
+      if (p1.equals(p2)) return true;
+      return false;
+   }
+
+   /**
+    * Returns true if values arent empty and if values dont have words with only spaces
+    * @param values Array of strings to test with
+    * @return true if has valid values
+    */
+   public static boolean hasValidValues(String[] values){
+      for (String value : values){
+         if (value.equals(" ".repeat(value.length()))) return false;
+         if (value.equals("")) return false;
+      }
+      return true;
+   }
+
 }

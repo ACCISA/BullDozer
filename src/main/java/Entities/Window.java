@@ -50,12 +50,18 @@ public class Window {
 
         stage.initStyle(StageStyle.UNDECORATED);
         System.out.println(icon);
-        stage.getIcons().add(new Image("C:\\Users\\darra\\IdeaProjects\\hack\\src\\main\\resources\\com\\example\\conuhacks\\bulldozer_logo.png"));
+        File f = new File(fxml);
+        String abs = f.getAbsolutePath();
+        int fxmlLength = fxml.length();
+        int absLength = abs.length();
+        String sourcePath = abs.substring(0,absLength-fxmlLength);
+
+        stage.getIcons().add(new Image(sourcePath+"\\src\\main\\resources\\com\\example\\conuhacks\\bulldozer_logo.png"));
         try{
 
             URL fxmlLocation = getClass().getClassLoader().getResource(fxml);
             FXMLLoader loader = new FXMLLoader(fxmlLocation);
-            URL url = new File("src/main/resources/com/example/conuhacks/"+fxml).toURI().toURL();
+            URL url = new File(fxml).toURI().toURL();
             Parent root = FXMLLoader.load(url);
             Scene scene = new Scene(root,width,height);
 

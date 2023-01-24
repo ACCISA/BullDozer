@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
     private double y = 0;
     @Override
     public void start(Stage stage) throws IOException {
-        Window main = new Window(600,313,"main-menu.fxml");
+        Window main = new Window(600,313,"src/main/resources/com/example/conuhacks/main-menu.fxml");
         main.Open();
     }
 
