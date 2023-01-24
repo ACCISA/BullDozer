@@ -49,34 +49,8 @@ public class HelloController {
     protected void openPasswordTestAction() {
         System.out.println("[APP] Opening Password Testing Menu");
         openPasswordGenerator.getScene().getWindow().hide();
-        Window pt = new Window(500,500,"pt-menu.fxml");
+        Window pt = new Window(600,400,"pt-menu.fxml");
         pt.Open();
-//        Stage stagePG = new Stage();
-//        stagePG.initStyle(StageStyle.UNDECORATED);
-//        try{
-//            URL fxmlLocation = HelloController.class.getResource("pt-menu.fxml");
-//            FXMLLoader loader = new FXMLLoader(fxmlLocation);
-//            Parent root = loader.load(fxmlLocation);
-//            Scene scene = new Scene(root);
-//            scene.setOnMousePressed(mouseEvent -> {
-//                x = mouseEvent.getSceneX();
-//                y = mouseEvent.getSceneY();
-//            });
-//
-//            scene.setOnMouseDragged(mouseEvent -> {
-//                stagePG.setX(mouseEvent.getScreenX() - x);
-//                stagePG.setY(mouseEvent.getScreenY() - y);
-//            });
-//            stagePG.setTitle("Hello!");
-//            stagePG.setScene(scene);
-//            stagePG.show();
-//            scene.getStylesheets().add(getClass().getResource("PTstyle.css").toExternalForm());
-//            stagePG.setScene(scene);
-//            stagePG.show();
-//            stagePG.setResizable(false);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 
     @FXML
@@ -91,30 +65,8 @@ public class HelloController {
     public void openPasswordGeneratorMenu(ActionEvent actionEvent) {
         System.out.println("[APP] Password Generator Menu Opened");
         openPasswordGenerator.getScene().getWindow().hide();
-        Stage stagePG = new Stage();
-        stagePG.initStyle(StageStyle.UNDECORATED);
-        try{
-            URL fxmlLocation = HelloController.class.getResource("pg-menu.fxml");
-//            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("menu.fxml"));
-            FXMLLoader loader = new FXMLLoader(fxmlLocation);
-            Parent root = loader.load(fxmlLocation);
-            Scene scene = new Scene(root);
-            scene.setOnMousePressed(mouseEvent -> {
-                x = mouseEvent.getSceneX();
-                y = mouseEvent.getSceneY();
-            });
-
-            scene.setOnMouseDragged(mouseEvent -> {
-                stagePG.setX(mouseEvent.getScreenX() - x);
-                stagePG.setY(mouseEvent.getScreenY() - y);
-            });
-            scene.getStylesheets().add(getClass().getResource("PgStyle.css").toExternalForm());
-            stagePG.setScene(scene);
-            stagePG.show();
-            stagePG.setResizable(false);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Window pgMenu = new Window(600,400,"pg-menu.fxml");
+        pgMenu.Open();
     }
 
 

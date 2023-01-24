@@ -7,8 +7,11 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class Window {
 
@@ -16,17 +19,20 @@ public class Window {
     private int height;
     private String fxml;
     private String title = "BullDozer";
-    private String icon = "bulldozer_logo.png";
+    private String icon;
     private String styleSheet = "style.css";
     private double x = 0;
     private double y = 0;
     private Stage stage;
+    private ArrayList<Stage> allStage;
 
 
     public Window(int w, int h, String fxml){
         this.width = w;
         this.height = h;
         this.fxml = fxml;
+        this.icon = "bulldozer_logo.png";
+        CreateWindow();
     }
 
     public Window(int w, int h, String fxml, String title, String icon){
@@ -35,17 +41,22 @@ public class Window {
         this.fxml = fxml;
         this.title = title;
         this.icon = icon;
+        CreateWindow();
     }
+
 
     private void CreateWindow(){
         this.stage = new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.getIcons().add(new Image(getClass().getResource(icon).toString()));
-        try{
-            URL fxmlLocation = Window.class.getResource(fxml);
-            FXMLLoader loader = new FXMLLoader(fxmlLocation);
 
-            Parent root = loader.load(fxmlLocation);
+        stage.initStyle(StageStyle.UNDECORATED);
+        System.out.println(icon);
+        stage.getIcons().add(new Image("C:\\Users\\darra\\IdeaProjects\\hack\\src\\main\\resources\\com\\example\\conuhacks\\bulldozer_logo.png"));
+        try{
+
+            URL fxmlLocation = getClass().getClassLoader().getResource(fxml);
+            FXMLLoader loader = new FXMLLoader(fxmlLocation);
+            URL url = new File("src/main/resources/com/example/conuhacks/"+fxml).toURI().toURL();
+            Parent root = FXMLLoader.load(url);
             Scene scene = new Scene(root,width,height);
 
 
@@ -60,16 +71,25 @@ public class Window {
             });
             stage.setTitle(title);
             stage.setScene(scene);
-            scene.getStylesheets().add(getClass().getResource(styleSheet).toExternalForm());
+            URL urlCSS = new File("src/main/resources/com/example/conuhacks/PTstyle.css").toURI().toURL();
+            scene.getStylesheets().add(urlCSS.toExternalForm());
             stage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 
     public void Open(){
         stage.show();
     }
+
+    public void Hide(){
+        stage.hide();
+    }
+
+
+
 
 }
