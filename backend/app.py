@@ -6,7 +6,6 @@ import database
 app = Flask(__name__)
 #uuid.uuid4().hex
 
-app.config["SECRET_KEY"] = 'bbb07774f2284417a9303684df7c1470'
 
 def token_required(func):
     
