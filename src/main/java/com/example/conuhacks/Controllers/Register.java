@@ -103,7 +103,6 @@ public class Register implements Initializable {
         }
         Api api = new Api();
         api.AccountCreation(inputUsername.getText(),inputPassword.getText());
-        api.AccountLogin(inputUsername.getText(),inputPassword.getText());
 
     }
 

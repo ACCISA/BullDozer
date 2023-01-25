@@ -29,7 +29,7 @@ def check_info(func):
         print(username)
         print(password)
         if password == None or username == None:
-            return jsonify({'status':'username or password not provided'})
+            return jsonify({'warning':'username or password not provided'})
         if database.doesAccountExist(username):
             return jsonify({'status':'Username already taken'})
 
