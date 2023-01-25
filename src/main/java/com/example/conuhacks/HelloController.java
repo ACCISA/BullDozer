@@ -48,7 +48,7 @@ public class HelloController {
     @FXML
     protected void openPasswordTestAction() {
         System.out.println("[APP] Opening Password Testing Menu");
-        openPasswordGenerator.getScene().getWindow().hide();
+        Window.Close(openPasswordGenerator);
         Window pt = new Window(600,400,"src/main/resources/com/example/conuhacks/pt-menu.fxml");
         pt.Open();
     }
@@ -64,7 +64,7 @@ public class HelloController {
 
     public void openPasswordGeneratorMenu(ActionEvent actionEvent) {
         System.out.println("[APP] Password Generator Menu Opened");
-        openPasswordGenerator.getScene().getWindow().hide();
+        Window.Close(openPasswordGenerator);
         Window pgMenu = new Window(600,400,"src/main/resources/com/example/conuhacks/pg-menu.fxml");
         pgMenu.Open();
     }
@@ -72,10 +72,13 @@ public class HelloController {
 
     public void openRegisterMenu(ActionEvent actionEvent) {
         Window register = new Window(300,400,"src/main/resources/com/example/conuhacks/Submenus/register-menu.fxml");
-        openPasswordGenerator.getScene().getWindow().hide();
+//        Window.Close(openPasswordGenerator);
         register.Open();
     }
 
     public void openLoginMenu(ActionEvent actionEvent) {
+        Window loginMenu = new Window(300, 400,"src/main/resources/com/example/conuhacks/Submenus/login-menu.fxml");
+//        Window.Close(openPasswordGenerator);
+        loginMenu.Open();
     }
 }

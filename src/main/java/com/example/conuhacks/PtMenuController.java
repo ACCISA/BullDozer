@@ -67,7 +67,7 @@ public class PtMenuController implements Initializable {
     void BackButtomPTAction(ActionEvent event) {
 
         System.out.println("[APP] Application went back to Main-Menu");
-        closeButtonPT.getScene().getWindow().hide();
+        Window.Close(closeButtonPT);
         Window toMain = new Window(600,313,"src/main/resources/com/example/conuhacks/main-menu.fxml");
         toMain.Open();
     }

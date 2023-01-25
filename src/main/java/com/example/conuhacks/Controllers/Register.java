@@ -1,5 +1,6 @@
 package com.example.conuhacks.Controllers;
 
+import Entities.Window;
 import Func.Api;
 import Func.Utils;
 import com.jfoenix.controls.*;
@@ -130,6 +131,10 @@ public class Register implements Initializable {
 //            jfxDialog.close();
             System.out.println("closed");
         }
+    }
+
+    public void closeButtomMainMenuAction(ActionEvent actionEvent) {
+        Window.Close(createAccount);
     }
 }
 

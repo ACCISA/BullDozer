@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 public class Api {
 
-    private void APICall(String apiLocation, String method, String[] args){
+    private String APICall(String apiLocation, String method, String[] args){
         String urlx = "http://127.0.0.1:5000/"+apiLocation;
 
         for (int i = 0; i < args.length; i++){
@@ -43,13 +43,15 @@ public class Api {
                 System.out.println(response.toString());
                 //Read JSON response and print
                 JSONObject myResponse = new JSONObject(response.toString());
-//                System.out.println("statusCode- "+myResponse.getString("warning"));
+                System.out.println("statusCode- "+myResponse.getString("status"));
+                return myResponse.getString("status");
 
             }
 
         } catch (Exception e){
             e.printStackTrace();
         }
+        return "false";
     }
 
     /**
@@ -92,8 +94,8 @@ public class Api {
         }
     }
 
-    public void AccountLogin(String username, String password){
-        APICall("login","GET",new String[]{"?username="+username,"&password="+password});
+    public String AccountLogin(String username, String password){
+        return APICall("login","GET",new String[]{"?username="+username,"&password="+password});
     }
 
 }

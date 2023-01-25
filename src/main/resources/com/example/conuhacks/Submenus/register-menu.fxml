@@ -40,7 +40,7 @@
          </JFXDialogLayout>
       </JFXDialog>
 
-      <AnchorPane fx:id="registerAnchorPane" onMouseClicked="#checkDialog" prefHeight="400.0" prefWidth="300.0" styleClass="backgroundPane" stylesheets="@../style.css">
+      <AnchorPane fx:id="registerAnchorPane" onMouseClicked="#checkDialog" prefHeight="400.0" prefWidth="300.0" style="-fx-border-color: white;" styleClass="backgroundPane" stylesheets="@../style.css">
          <children>
             <JFXButton fx:id="createAccount" layoutX="52.0" layoutY="313.0" onAction="#actionCreateAccount" prefHeight="55.0" prefWidth="196.0" style="-fx-border-color: WHITE;" text="Register" textFill="WHITE">
                <font>
@@ -52,7 +52,7 @@
                   <Insets />
                </opaqueInsets>
             </JFXTextField>
-            <Text fill="WHITE" layoutX="37.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Create an Account" wrappingWidth="226.1982421875">
+            <Text fill="WHITE" layoutX="37.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Create an Account" wrappingWidth="226.1982421875">
                <font>
                   <Font size="26.0" />
                </font>
@@ -74,6 +74,11 @@
             </Text>
             <JFXPasswordField fx:id="inputPassword" layoutX="52.0" layoutY="204.0" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: WHITE;" />
             <JFXPasswordField fx:id="inputConfirmPassword" layoutX="52.0" layoutY="271.0" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: WHITE;" />
+            <JFXButton fx:id="closeButtonMainMenu" layoutX="190.0" layoutY="14.0" onAction="#closeButtomMainMenuAction" prefHeight="45.0" prefWidth="96.0" styleClass="closeButton" text="Close" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

@@ -1,9 +1,11 @@
 package Entities;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -44,6 +46,11 @@ public class Window {
         CreateWindow();
     }
 
+    public static void Close(JFXButton component){
+        component.getScene().getWindow().hide();
+        System.out.println("[APP] Application has been closed");
+
+    }
 
     private void CreateWindow(){
         this.stage = new Stage();
@@ -89,6 +96,7 @@ public class Window {
 
     public void Open(){
         stage.show();
+        System.out.println("[APP] Opened " +fxml);
     }
 
     public void Hide(){

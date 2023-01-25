@@ -23,6 +23,10 @@
      -fx-background-radius: 15px;
 }
 
+.closeButton:hover {
+    -fx-background-color: red;
+     -fx-background-radius: 15px;
+}
 
  #openPasswordGenerator{
             -fx-border-color: white;
